@@ -18,19 +18,18 @@ handleEvent: async function ({ api, event, args }) {
  const body = content.toLowerCase();
  const { alldown } = require("shaon-videos-downloader")
  if (body.startsWith("https://")) {
- api.setMessageReaction("⚠️", event.messageID, (err) => {}, true);
+ api.setMessageReaction("🔎", event.messageID, (err) => {}, true);
 const data = await alldown(content);
  console.log(data)
  let Shaon = data.url;
- api.setMessageReaction("☢️", event.messageID, (err) => {}, true);
+ api.setMessageReaction("✅", event.messageID, (err) => {}, true);
  const video = (await axios.get(Shaon, {
  responseType: "arraybuffer",
  })).data;
  fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
  return api.sendMessage({
- body: `🔥🚀 𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁 | ᵁᴸᴸ⁴ˢᴴ 🔥💻 
-📥⚡𝗔𝘂𝘁𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿⚡📂
+ body: `📥⚡𝗔𝘂𝘁𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿⚡📂
 🎬 𝐄𝐧𝐣𝐨𝐲 𝐭𝐡𝐞 𝐕𝐢𝐝𝐞𝐨 🎀`,
  attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
