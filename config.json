@@ -3,8 +3,8 @@
     "keyActive": "",
     "DeveloperMode": false,
     "autoCreateDB": true,
-    "notiGroup": true,
-    "NOTIFICATION": true,
+    "notiGroup": false,
+    "NOTIFICATION": false,
     "allowInbox": true,
     "autoClean": true,
     "commandDisabled": [
@@ -22,7 +22,7 @@
         "100088769563815"
     ],
     "NDH": [
-        "100000478146113"
+        "100088769563815"
     ],
     "DATABASE": {
         "sqlite": {
